@@ -85,19 +85,19 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 			'value_str' => '',
 			'idx2' => 0
 		];
-		$idx_cunks = explode('.', $this->getInput('idx2'));
+		$idx_cunks = explode('.', $this->getInput('idx'));
 		$property = array_pop($idx_cunks);
 		$idx = implode('.', $idx_cunks);
-		$defaults = static::$namespaces[$idx];
+		// $defaults = static::$namespaces[$idx];
 
-		if (array_key_exists('from', $defaults) || array_key_exists('to', $defaults)) {
-			$defaults += [
-				'from' => 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT), // nothing changed
-				'to' => 'now'
-			];
-		}
+		// if (array_key_exists('from', $defaults) || array_key_exists('to', $defaults)) {
+		// 	$defaults += [
+		// 		'from' => 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT), // nothing changed
+		// 		'to' => 'now'
+		// 	];
+		// }
 
-		$filter = (new CTabFilterProfile($idx, $defaults))->read();
+		$filter = (new CTabFilterProfile($idx, []))->read();
 
 		switch ($property) {
 			case 'selected':
