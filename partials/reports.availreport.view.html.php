@@ -6,8 +6,8 @@ $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
 if (str_contains($view_url, 'from=')) {
-	$arr = explode("&", $$view_url);
-	print($arr);
+	$arr = explode('&', $$view_url, -1);
+	print_r($arr);
 }
 
 $table->setHeader([
