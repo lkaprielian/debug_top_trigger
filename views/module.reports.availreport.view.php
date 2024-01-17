@@ -23,8 +23,8 @@ if ($data['action'] == 'availreport.view') {
 		);
 
 	if ($web_layout_mode == ZBX_LAYOUT_NORMAL) {
-		// $filter = (new CTabFilter())
-		// 	->setId('reports_availreport_filter')
+		$filter = (new CTabFilter())
+			->setId('reports_availreport_filter');
 		// 	->setOptions($data['tabfilter_options'])
 		// 	->addTemplate(new CPartial($data['filter_view'], $data['filter_defaults']));
 
