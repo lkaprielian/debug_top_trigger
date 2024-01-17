@@ -113,8 +113,8 @@ $template = (new CDiv())
 	->addClass(ZBX_STYLE_FILTER_FORMS)
 	->addItem((new CDiv($filter_column))->addClass(ZBX_STYLE_CELL));
 
-$timeselector_from = getRequest('#{from}', 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT));
-$timeselector_to = getRequest('#{to}','now');
+$timeselector_from = getRequest('#{from}');
+$timeselector_to = getRequest('#{to}');
 
 $template = (new CForm('get'))
 	->cleanItems()
