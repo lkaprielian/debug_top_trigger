@@ -31,16 +31,8 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'from' =>			'range_time',
 			'to' =>				'range_time'
 		];
-
-		check_fields($fields);
-		if (hasRequest('from') || hasRequest('to')) {
-			validateTimeSelectorPeriod(
-				hasRequest('from') ? getRequest('from') : null,
-				hasRequest('to') ? getRequest('to') : null
-			);
-		}
-
-		$ret = $this->validateInput($fields);
+		
+		$ret = $this->validateInput($fields) && $this->validateTimeSelectorPeriod();
 
 		if (!$ret) {
 			$this->setResponse(new CControllerResponseFatal());
@@ -59,6 +51,10 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 		$profile = (new CTabFilterProfile(static::FILTER_IDX, static::FILTER_FIELDS_DEFAULT))->read();
 		if ($this->hasInput('filter_reset')) {
 			$profile->reset();
+		}
+		elseif ($this->hasInput('filter_set')) {
+			$profile->setTabFilter(0, ['filter_name' => ''] + $this->cleanInput($this->getInputAll()));
+			$profile->update();
 		}
 		else {
 			$profile->setInput($this->cleanInput($this->getInputAll()));
