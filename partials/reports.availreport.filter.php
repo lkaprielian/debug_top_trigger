@@ -113,6 +113,9 @@ $template = (new CDiv())
 	->addClass(ZBX_STYLE_FILTER_FORMS)
 	->addItem((new CDiv($filter_column))->addClass(ZBX_STYLE_CELL));
 
+$timeselector_from = getRequest('#{from}', CProfile::get('web.toptriggers.filter.from','now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT)));
+$timeselector_to = getRequest('#{to}', CProfile::get('web.toptriggers.filter.to', 'now'));
+
 $template = (new CForm('get'))
 	->cleanItems()
 	->setName('zbx_filter')
@@ -122,8 +125,8 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', 'now')),
-		(new CVar('to', '#{to}'))->removeId()
+		(new CVar('from', $timeselector_from)),
+		(new CVar('to', $timeselector_to))
 	]);
 
 if (array_key_exists('render_html', $data)) {
