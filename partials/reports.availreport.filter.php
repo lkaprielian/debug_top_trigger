@@ -108,6 +108,9 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 		);
 
+
+$view_url = $data['view_curl']->getUrl();
+
 $template = (new CDiv())
 	->addClass(ZBX_STYLE_TABLE)
 	->addClass(ZBX_STYLE_FILTER_FORMS)
