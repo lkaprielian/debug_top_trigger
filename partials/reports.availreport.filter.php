@@ -116,7 +116,7 @@ if (array_key_exists('view_curl', $data)) {
 
 }
 else {
-	$test = 'now-7d';
+	$test = '#{from}';
 }
 
 
