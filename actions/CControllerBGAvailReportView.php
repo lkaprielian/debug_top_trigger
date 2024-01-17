@@ -31,7 +31,15 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'from' =>			'range_time',
 			'to' =>				'range_time'
 		];
-		$ret = $this->validateInput($fields) && $this->validateTimeSelectorPeriod();
+		
+		if (hasRequest('from') || hasRequest('to')) {
+			validateTimeSelectorPeriod(
+				hasRequest('from') ? getRequest('from') : null,
+				hasRequest('to') ? getRequest('to') : null
+			);
+		}
+
+		$ret = $this->validateInput($fields);
 
 		if (!$ret) {
 			$this->setResponse(new CControllerResponseFatal());
