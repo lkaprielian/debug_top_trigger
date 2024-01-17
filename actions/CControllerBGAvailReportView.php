@@ -65,7 +65,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 
 			$filter_tabs[] = $filter_tab + ['filter_view_data' => $this->getAdditionalData($filter_tab)];
 		}
-		print_r($filter_tabs[]);
+
 		// filter
 		$filter = $filter_tabs[$profile->selected];
 		$refresh_curl = (new CUrl('zabbix.php'));
