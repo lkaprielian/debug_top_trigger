@@ -24,6 +24,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'tpl_triggerids' =>		'array_id',
 			'hostgroupids' =>		'array_id',
 			'hostids' =>			'array_id',
+			'filter_custom_time' =>	'in 1,0',
 			'filter_reset' =>		'in 1',
 			'only_with_problems' =>		'in 0,1',
 			'page' =>			'ge 1',
