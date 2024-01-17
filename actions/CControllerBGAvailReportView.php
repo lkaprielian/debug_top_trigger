@@ -61,7 +61,9 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 				$filter_tab['filter_src']['filter_view_data'] = $this->getAdditionalData($filter_tab['filter_src']);
 			}
 
-			$filter_tabs[] = $filter_tab + ['filter_view_data' => $this->getAdditionalData($filter_tab)];
+			// $filter_tabs[] = $filter_tab + ['filter_view_data' => $this->getAdditionalData($filter_tab)];
+			$filter_tabs[] = $filter_tab;
+
 		}
 
 		// filter
