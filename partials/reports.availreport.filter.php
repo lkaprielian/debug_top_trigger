@@ -108,16 +108,16 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 		);
 
-if (array_key_exists('view_curl', $data)) {
-	$view_url = $data['view_curl'];
-	$arr = explode('&', $view_url, -1);
-	// $test = str_replace("from=", "", $arr[1]);
-	$test = '';
+// if (array_key_exists('view_curl', $data)) {
+// 	$view_url = $data['view_curl'];
+// 	$arr = explode('&', $view_url, -1);
+// 	// $test = str_replace("from=", "", $arr[1]);
+// 	$test = '';
 
-}
-else {
-	$test = '#{from}';
-}
+// }
+// else {
+// 	$test = '#{from}';
+// }
 
 
 $template = (new CDiv())
@@ -134,7 +134,7 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', $test)),
+		(new CVar('from', $data['from'])),
 		(new CVar('to', $data['to']))
 	]);
 
@@ -278,9 +278,9 @@ if (array_key_exists('render_html', $data)) {
 			only_with_problems_checkbox.removeAttr('checked');
 		}
 
-		// // Initialize src_url.
-		// this.resetUnsavedState();
-		// this.on(TABFILTERITEM_EVENT_ACTION, update.bind(this));
+		// Initialize src_url.
+		this.resetUnsavedState();
+		this.on(TABFILTERITEM_EVENT_ACTION, update.bind(this));
 	}
 
 	function expand(data, container) {
