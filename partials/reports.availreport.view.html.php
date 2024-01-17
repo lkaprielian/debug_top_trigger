@@ -5,16 +5,16 @@ $form = (new CForm())->setName('availreport_view');
 $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
-// $arr = explode('&', $view_url, -1);
-// // $key = array_search('from=', $arr);
+$arr = explode('&', $view_url, -1);
+// $key = array_search('from=', $arr);
 
-// // print($arr['from']);
-// // $test = strrchr( $view_url, '&from='); //returns ".jpg"
-// // print_r(($arr[1]));
+// print($arr['from']);
+// $test = strrchr( $view_url, '&from='); //returns ".jpg"
+// print_r(($arr[1]));
 
-// // print_r($arr[2]);
-// $test = str_replace("from=", "", $arr[1]);
-// print($test);
+// print_r($arr[2]);
+$test = str_replace("from=", "", $arr[1]);
+print($test);
 // if (array_key_exists('from', $arr)) {
 // }
 // if (str_contains($view_url, 'from=')) {
