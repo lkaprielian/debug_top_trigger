@@ -302,6 +302,9 @@ abstract class CControllerBGAvailReport extends CController {
 				'hostids' => $filter['hostids']
 			]);
 			$data['hosts_multiselect'] = CArrayHelper::renameObjectsKeys(array_values($hosts), ['hostid' => 'id']);
+		}
+		
+		if ($filter['from']) {
 			$data['from'] = 'now-7d';
 		}
 
