@@ -108,11 +108,11 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 		);
 
-if (array_key_exists('view_curl', $data)) {
-	$view_url = $data['view_curl'];
-	$arr = explode('&', $view_url, -1);
-	$test = str_replace("from=", "", $arr[1]);
-}
+// if (array_key_exists('view_curl', $data)) {
+$view_url = $data['view_curl'];
+$arr = explode('&', $view_url, -1);
+$test = str_replace("from=", "", $arr[1]);
+// }
 
 
 $template = (new CDiv())
