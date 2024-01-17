@@ -10,11 +10,11 @@ $arr = explode('&', $view_url, -1);
 
 // print($arr['from']);
 // $test = strrchr( $view_url, '&from='); //returns ".jpg"
-print_r(($arr[1]));
+// print_r(($arr[1]));
 
 // print_r($arr[2]);
-// $test = str_replace("from=", "", $arr[2]);
-// print($test);
+$test = str_replace("from=", "", $arr[1]);
+print($test);
 // if (array_key_exists('from', $arr)) {
 // }
 // if (str_contains($view_url, 'from=')) {
