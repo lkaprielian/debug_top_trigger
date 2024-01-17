@@ -47,7 +47,6 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 	}
 
 	protected function checkInput() {
-		print('lisa');
 		$fields = [
 			'idx' =>		'required|string',
 			'value_int' =>	'int32',
@@ -94,7 +93,7 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 
 		if (array_key_exists('from', $defaults) || array_key_exists('to', $defaults)) {
 			$defaults += [
-				'from' => 'now-7d',
+				'from' => 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT), // nothing changed
 				'to' => 'now'
 			];
 		}
