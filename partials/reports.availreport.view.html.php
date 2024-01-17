@@ -10,7 +10,7 @@ $arr = explode('&', $view_url, -1);
 
 // print($arr['from']);
 // $test = strrchr( $view_url, '&from='); //returns ".jpg"
-print_r(array_values($arr[2]));
+print_r($arr[2]);
 
 // print_r($arr[2]);
 // $test = str_replace("from=", "", $arr[2]);
