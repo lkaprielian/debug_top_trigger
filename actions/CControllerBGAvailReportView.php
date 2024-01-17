@@ -31,7 +31,8 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'from' =>			'range_time',
 			'to' =>				'range_time'
 		];
-		
+
+		check_fields($fields);
 		if (hasRequest('from') || hasRequest('to')) {
 			validateTimeSelectorPeriod(
 				hasRequest('from') ? getRequest('from') : null,
