@@ -108,10 +108,12 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 		);
 
-if (array_key_exists('view_curl', $data)) {
-	$view_url = $data['view_curl']->getUrl();
-	
-}
+// if (array_key_exists('view_curl', $data)) {
+// 	$view_url = $data['view_curl']->getUrl();
+// 	if (str_contains($view_url, 'from=')) {
+
+// 	}
+// }
 
 
 $template = (new CDiv())

@@ -5,6 +5,9 @@ $form = (new CForm())->setName('availreport_view');
 $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
+if (str_contains($view_url, 'from=')) {
+	print($view_url);
+}
 
 $table->setHeader([
 	(new CColHeader(_('Host'))),
@@ -14,7 +17,6 @@ $table->setHeader([
 	(new CColHeader(_('Tags')))
 ]);
 
-print($view_url);
 $allowed_ui_problems = CWebUser::checkAccess(CRoleHelper::UI_MONITORING_PROBLEMS);
 $triggers = $data['triggers'];
 
