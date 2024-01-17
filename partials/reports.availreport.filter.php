@@ -281,25 +281,6 @@ if (array_key_exists('render_html', $data)) {
 		// Initialize src_url.
 		this.resetUnsavedState();
 		this.on(TABFILTERITEM_EVENT_ACTION, update.bind(this));
-
-		if (this._parent) {
-			this._parent.on(TABFILTER_EVENT_UPDATE, (ev) => {
-				let form = this.getForm(),
-					tabfilter = ev.detail.target;
-
-				if (ev.detail.filter_property !== 'properties' || tabfilter._active_item !== this) {
-					return;
-				}
-
-				if ($(form).find('[name="filter_custom_time"]').val() == 1) {
-					$('[name="show"][value="<?= TRIGGERS_OPTION_ALL ?>"]', form).prop('checked', true);
-					$('#show_' + this._data.uniqid, form).trigger('change');
-					this.setUrlArgument('show', <?= TRIGGERS_OPTION_ALL ?>);
-					this.updateUnsavedState();
-					this.setBrowserLocationToApplyUrl();
-				}
-			});
-
 	}
 
 	function expand(data, container) {
