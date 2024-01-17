@@ -27,7 +27,6 @@ abstract class CControllerBGAvailReport extends CController {
 		'hostids' => [],
 		'only_with_problems' => 1,
         'page' => null,
-		'filter_custom_time' => 1,
 		'from' => '',
 		'to' => ''
 	];
