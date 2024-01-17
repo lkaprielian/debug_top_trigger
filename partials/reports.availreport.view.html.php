@@ -5,10 +5,12 @@ $form = (new CForm())->setName('availreport_view');
 $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
-if (str_contains($view_url, 'from=')) {
-	$arr = explode('&', $$view_url, -1);
-	print_r($arr);
-}
+$arr = explode('&', $view_url, -1);
+print_r($arr);
+
+// if (str_contains($view_url, 'from=')) {
+
+// }
 
 $table->setHeader([
 	(new CColHeader(_('Host'))),
