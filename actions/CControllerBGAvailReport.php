@@ -27,8 +27,8 @@ abstract class CControllerBGAvailReport extends CController {
 		'hostids' => [],
 		'only_with_problems' => 1,
                 'page' => null,
-		'from' => 'now-7d',
-		'to' => 'now'
+		'from' => '',
+		'to' => ''
 	];
 
 	protected function getData(array $filter): array {
@@ -80,9 +80,9 @@ abstract class CControllerBGAvailReport extends CController {
 		if ($filter['from'] != '' && $filter['to'] != '') {
 			$range_time_parser = new CRangeTimeParser();
 			$range_time_parser->parse($filter['from']);
-			$filter['from_ts'] = 'now-29d';
+			$filter['from_ts'] = $range_time_parser->getDateTime(true)->getTimestamp(); // timestamp for sql request
 			$range_time_parser->parse($filter['to']);
-			$filter['to_ts'] = 'now';
+			$filter['to_ts'] = $range_time_parser->getDateTime(false)->getTimestamp(); // timestamp for sql request
 		} else {
 			$filter['from_ts'] = null; //nothing changed
 			$filter['to_ts'] = null;
