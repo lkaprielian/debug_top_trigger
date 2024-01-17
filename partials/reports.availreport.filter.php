@@ -119,11 +119,11 @@ $template = (new CForm('get'))
 	->addItem([
 		$template,
 		(new CSubmitButton(null))->addClass(ZBX_STYLE_DISPLAY_NONE),
-		(new CVar('filter_name', '#{filter_name}')),
-		(new CVar('filter_show_counter', '#{filter_show_counter}')),
-		(new CVar('filter_custom_time', '#{filter_custom_time}')),
-		(new CVar('from', 'now-7d')),
-		(new CVar('to', '#{to}'))
+		(new CVar('filter_name', '#{filter_name}'))->removeId(),
+		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
+		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
+		(new CVar('from', 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT))),
+		(new CVar('to', '#{to}'))->removeId()
 	]);
 
 if (array_key_exists('render_html', $data)) {
