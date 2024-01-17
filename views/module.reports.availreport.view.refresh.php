@@ -1,5 +1,6 @@
 <?php
 
+print_r($data)
 $output = [
 	'body' => (new CPartial('reports.availreport.view.html', $data))->getOutput()
 ];
