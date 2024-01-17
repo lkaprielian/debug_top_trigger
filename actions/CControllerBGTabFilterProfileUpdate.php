@@ -37,8 +37,8 @@ use CTabFilterProfile;
 class CControllerBGTabFilterProfileUpdate extends CController {
 
 	public static $namespaces = [
-		// CControllerHost::FILTER_IDX => CControllerHost::FILTER_FIELDS_DEFAULT,
-		// CControllerProblem::FILTER_IDX => CControllerProblem::FILTER_FIELDS_DEFAULT,
+		CControllerHost::FILTER_IDX => CControllerHost::FILTER_FIELDS_DEFAULT,
+		CControllerProblem::FILTER_IDX => CControllerProblem::FILTER_FIELDS_DEFAULT,
 		CControllerBGAvailReport::FILTER_IDX => CControllerBGAvailReport::FILTER_FIELDS_DEFAULT
 	];
 
@@ -89,6 +89,7 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 		$property = array_pop($idx_cunks);
 		$idx = implode('.', $idx_cunks);
 		$defaults = static::$namespaces[$idx];
+		print_r($defaults);
 
 		if (array_key_exists('from', $defaults) || array_key_exists('to', $defaults)) {
 			$defaults += [
