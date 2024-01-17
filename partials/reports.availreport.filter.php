@@ -108,12 +108,16 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 		);
 
-// if (array_key_exists('view_curl', $data)) {
-$view_url = $data['view_curl'];
-// $arr = explode('&', $view_url, -1);
-// $test = str_replace("from=", "", $arr[1]);
-// }
-// $test = 'now-7d';
+if (array_key_exists('view_curl', $data)) {
+	$view_url = $data['view_curl'];
+	$arr = explode('&', $view_url, -1);
+	// $test = str_replace("from=", "", $arr[1]);
+	$test = '';
+
+}
+else {
+	$test = 'now-7d';
+}
 
 
 $template = (new CDiv())
@@ -130,7 +134,7 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', $view_url)),
+		(new CVar('from', $test)),
 		(new CVar('to', $data['to']))
 	]);
 
