@@ -47,6 +47,7 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 	}
 
 	protected function checkInput() {
+		print('lisa');
 		$fields = [
 			'idx' =>		'required|string',
 			'value_int' =>	'int32',
