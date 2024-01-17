@@ -109,10 +109,11 @@ $filter_column = (new CFormList())
 		);
 
 // if (array_key_exists('view_curl', $data)) {
-$view_url = $data['view_curl'];
-$arr = explode('&', $view_url, -1);
-$test = str_replace("from=", "", $arr[1]);
+// $view_url = $data['view_curl'];
+// $arr = explode('&', $view_url, -1);
+// $test = str_replace("from=", "", $arr[1]);
 // }
+$test = 'now-7d';
 
 
 $template = (new CDiv())
