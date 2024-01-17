@@ -25,7 +25,6 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'hostgroupids' =>		'array_id',
 			'hostids' =>			'array_id',
 			'filter_reset' =>		'in 1',
-			'filter_set' =>		'in 1',
 			'only_with_problems' =>		'in 0,1',
 			'page' =>			'ge 1',
 			'counter_index' =>		'ge 0',
@@ -53,10 +52,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 		if ($this->hasInput('filter_reset')) {
 			$profile->reset();
 		}
-		elseif ($this->hasInput('filter_set')) {
-			$profile->setTabFilter(0, ['filter_name' => ''] + $this->cleanInput($this->getInputAll()));
-			$profile->update();
-		}
+
 		else {
 			$profile->setInput($this->cleanInput($this->getInputAll()));
 		}
