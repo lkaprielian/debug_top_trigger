@@ -6,10 +6,11 @@ $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
 $arr = explode('&', $view_url, -1);
+print($arr['from']);
+
 // print_r($arr);
-if (array_key_exists('from', $arr)) {
-	print($arr['from']);
-}
+// if (array_key_exists('from', $arr)) {
+// }
 // if (str_contains($view_url, 'from=')) {
 
 // }
