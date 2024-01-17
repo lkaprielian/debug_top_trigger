@@ -10,7 +10,7 @@ $key = array_search('from=', $arr);
 
 // print($arr['from']);
 // $test = strrchr( $view_url, '&from='); //returns ".jpg"
-print_r($key);
+print_r($arr[$key]);
 
 // print_r($arr[2]);
 // $test = str_replace("from=", "", $arr[2]);
