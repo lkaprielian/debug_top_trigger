@@ -20,7 +20,7 @@
 				this.filter.on(TABFILTER_EVENT_URLSET, (ev) => {
 					let url = new Curl('', false);
 
-					url.setArgument('action', 'availreport.view.update');
+					url.setArgument('action', 'availreport.view');
 					this.refresh_url = url.getUrl();
 					this.unscheduleRefresh();
 					this.refresh();
