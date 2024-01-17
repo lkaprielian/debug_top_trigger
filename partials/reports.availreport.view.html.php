@@ -14,7 +14,7 @@ $table->setHeader([
 	(new CColHeader(_('Tags')))
 ]);
 
-print_r($data['view_curl']);
+print($view_url);
 $allowed_ui_problems = CWebUser::checkAccess(CRoleHelper::UI_MONITORING_PROBLEMS);
 $triggers = $data['triggers'];
 
