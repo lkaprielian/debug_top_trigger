@@ -85,7 +85,7 @@ class CControllerBGTabFilterProfileUpdate extends CController {
 			'value_str' => '',
 			'idx2' => 0
 		];
-		$idx_cunks = explode('.', $this->getInput('idx'));
+		$idx_cunks = explode('.', $this->getInput('idx2'));
 		$property = array_pop($idx_cunks);
 		$idx = implode('.', $idx_cunks);
 		$defaults = static::$namespaces[$idx];
