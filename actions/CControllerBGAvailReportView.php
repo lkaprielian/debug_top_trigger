@@ -64,7 +64,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 				
 			}
 
-			$filter_tabs[] = [$filter_tab];
+			$filter_tabs[] = [[]];
 		}
 
 		// filter
