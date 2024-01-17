@@ -88,6 +88,8 @@ abstract class CControllerBGAvailReport extends CController {
 			$filter['to_ts'] = null;
 		}
 
+		print($filter['from']);
+
 		if ($filter['only_with_problems']) {
 			// Find all triggers that went into PROBLEM state
 			// at any time in given time frame
