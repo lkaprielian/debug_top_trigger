@@ -25,13 +25,13 @@ if ($data['action'] == 'availreport.view') {
 	if ($web_layout_mode == ZBX_LAYOUT_NORMAL) {
 		$filter = (new CTabFilter())
 			->setId('reports_availreport_filter')
-			->setOptions($data['tabfilter_options'])
-			->addTemplate(new CPartial($data['filter_view'], $data['filter_defaults']));
+			->setOptions($data['tabfilter_options']);
+			// ->addTemplate(new CPartial($data['filter_view'], $data['filter_defaults']));
 
-		// foreach ($data['filter_tabs'] as $tab) {
-		// 	$tab['tab_view'] = $data['filter_view'];
-		// 	$filter->addTemplatedTab($tab['filter_name'], $tab);
-		// }
+		foreach ($data['filter_tabs'] as $tab) {
+			$tab['tab_view'] = $data['filter_view'];
+			$filter->addTemplatedTab($tab['filter_name'], $tab);
+		}
 
 		// // Set javascript options for tab filter initialization in module.reports.availreport.js.php file.
 		$data['filter_options'] = $filter->options;
