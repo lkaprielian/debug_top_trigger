@@ -121,7 +121,7 @@ $template = (new CForm('get'))
 		(new CSubmitButton(null))->addClass(ZBX_STYLE_DISPLAY_NONE),
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
-		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
+		(new CVar('filter_custom_time', '#{filter_custom_time}')),
 		(new CVar('from', '#{from}')),
 		(new CVar('to', '#{to}'))
 	]);
