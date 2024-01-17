@@ -27,8 +27,8 @@ abstract class CControllerBGAvailReport extends CController {
 		'hostids' => [],
 		'only_with_problems' => 1,
                 'page' => null,
-		'from' => '',
-		'to' => ''
+		'from' => 'now-7d',
+		'to' => 'now'
 	];
 
 	protected function getData(array $filter): array {
