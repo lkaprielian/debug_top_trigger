@@ -7,7 +7,8 @@ $table = (new CTableInfo());
 $view_url = $data['view_curl']->getUrl();
 $arr = explode('&', $view_url, -1);
 // print($arr['from']);
-print_r($arr);
+$test = strrchr( $arr, 'from='); //returns ".jpg"
+print_r($test);
 
 // print_r($arr[2]);
 // $test = str_replace("from=", "", $arr[2]);
