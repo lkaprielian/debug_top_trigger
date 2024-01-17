@@ -109,7 +109,7 @@ $filter_column = (new CFormList())
 		);
 
 
-$view_url = $data['view_curl'];
+$view_url = $data['view_curl']->getUrl();
 
 $template = (new CDiv())
 	->addClass(ZBX_STYLE_TABLE)
