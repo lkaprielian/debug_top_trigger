@@ -78,7 +78,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			'filter_view' => 'reports.availreport.filter',
 			'filter_defaults' => $profile->filter_defaults,
 			'tabfilter_options' => [
-				// 'idx' => static::FILTER_IDX,
+				'idx' => static::FILTER_IDX,
 				// 'selected' => $profile->selected,
 				// 'support_custom_time' => 1,
 				// 'expanded' => $profile->expanded,
