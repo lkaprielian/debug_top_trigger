@@ -25,7 +25,7 @@
     },
     "tabfilter.profile.update": {
       "class": "CControllerBGTabFilterProfileUpdate",
-      "view": null,
+      "view": "module.reports.availreport.view.refresh",
       "layout": "layout.json"
     }
   }
