@@ -5,7 +5,7 @@ $form = (new CForm())->setName('availreport_view');
 $table = (new CTableInfo());
 
 $view_url = $data['view_curl']->getUrl();
-print_r($data[$filter]['from']);
+print_r($data['filter']['from']);
 // $arr = explode('&', $view_url, -1);
 // // $key = array_search('from=', $arr);
 
