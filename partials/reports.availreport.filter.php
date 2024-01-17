@@ -1,4 +1,4 @@
-<?php declare(strict_types = 0);
+<?php declare(strict_types = 1);
 
 $filter_column = (new CFormList())
 	->addRow((new CLabel(_('Template groups'), 'tpl_groupids_#{uniqid}_ms')),
