@@ -87,7 +87,7 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 					'from' => $profile->from,
 					'to' => $profile->to,
 					'disabled' => false
-				] + getTimeselectorActions('now', 'now-'.CSettingsHelper::get(CSettingsHelper::PERIOD_DEFAULT))
+				] + getTimeselectorActions('now', 'now-30d')
 			],
 			'filter_tabs' => $filter_tabs,
 			'refresh_url' => $refresh_curl->getUrl(),
