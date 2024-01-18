@@ -24,11 +24,10 @@
 					// this.refresh_url = url.getUrl();
 					// this.unscheduleRefresh();
 					// this.refresh();
+	
 					const url = new URL(this.refresh_url, 'http://example.com');
 					url.setArgument('action', 'availreport.view.refresh');
 					this.refresh_url = url.getUrl();
-					this.unscheduleRefresh();
-					this.refresh();
 					for(var key of url.searchParams.keys()) {
 						if (key == 'from' || key == 'to') {
 							url.searchParams.set(key, data[key]);
