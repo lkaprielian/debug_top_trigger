@@ -26,18 +26,20 @@
 					// this.refresh();
 	
 					const url = new URL(this.refresh_url, 'http://example.com');
-					url.setArgument('action', 'availreport.view.refresh');
-					this.refresh_url = url.getUrl();
-					this.unscheduleRefresh();
-					this.refresh();
+					// url.setArgument('action', 'availreport.view.refresh');
+					// this.refresh_url = url.getUrl();
+					// this.unscheduleRefresh();
+					// this.refresh();
 					for(var key of url.searchParams.keys()) {
 						if (key == 'from' || key == 'to') {
 							url.searchParams.set(key, data[key]);
 						}
 					}
 
-					window.availreport_page.refresh_url=url.pathname.slice(1) + '?' + url.searchParams.toString();
-					window.availreport_page.refresh();
+					// window.availreport_page.refresh_url=url.pathname.slice(1) + '?' + url.searchParams.toString();
+					// window.availreport_page.refresh();
+					this.refresh_url=url.pathname.slice(1) + '?' + url.searchParams.toString();
+					this.refresh();
 
 					var filter_item = this.filter._active_item;
 
