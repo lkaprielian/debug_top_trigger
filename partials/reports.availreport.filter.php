@@ -108,7 +108,7 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 	)
 
-	->addRow(new CLabel(_('Triggers'), 'filter_triggerids__ms')),
+	->addRow((new CLabel(_('Triggers'), 'filter_triggerids__ms')),
 		(new CMultiSelect([
 			'name' => 'filter_triggerids[]',
 			'object_name' => 'triggers',
@@ -127,7 +127,8 @@ $filter_column = (new CFormList())
 					'noempty' => true
 				]
 			]
-	]))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
+		]))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
+	)
 
 	->addRow(_('from'),
 		(new CCheckBox('from'))
