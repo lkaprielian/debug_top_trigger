@@ -240,8 +240,17 @@ abstract class CControllerBGAvailReport extends CController {
 			unset($trigger);
 		}
 
-		$filter['from'] = 'now-7d';
+		$timeselector_options = [
+			'profileIdx' => 'reports.availreport.filter',
+			'profileIdx2' => 0,
+			'from' => 'now-7d',
+			'to' => getRequest('to')
+		];
 
+		updateTimeSelectorPeriod($timeselector_options);
+		$data['filter'] = [
+			'timeline' => getTimeSelectorPeriod($timeselector_options),
+		];
 		return [
 			'paging' => $paging,
 			'triggers' => $selected_triggers,
@@ -309,17 +318,7 @@ abstract class CControllerBGAvailReport extends CController {
 			$data['hosts_multiselect'] = CArrayHelper::renameObjectsKeys(array_values($hosts), ['hostid' => 'id']);
 		}
 		
-		$timeselector_options = [
-			'profileIdx' => 'reports.availreport.filter',
-			'profileIdx2' => 0,
-			'from' => 'now-7d',
-			'to' => getRequest('to')
-		];
 
-		updateTimeSelectorPeriod($timeselector_options);
-		$data['filter'] = [
-			'timeline' => getTimeSelectorPeriod($timeselector_options),
-		];
 		
 		// if ($filter['from'] == '') {
 		// 	$range_time_parser = new CRangeTimeParser();
