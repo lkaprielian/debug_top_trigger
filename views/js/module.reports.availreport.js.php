@@ -16,7 +16,7 @@
 
 			if (filter_options) {
 				this.refresh_counters = this.createCountersRefresh(1);
-				this.filter = new CTabFilter($('#reports_availreport_filter')[2], filter_options);
+				this.filter = new CTabFilter($('#reports_availreport_filter')[0], filter_options);
 				this.filter.on(TABFILTER_EVENT_URLSET, (ev) => {
 					let url = new Curl('', false);
 
