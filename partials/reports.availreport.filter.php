@@ -106,13 +106,35 @@ $filter_column = (new CFormList())
 			->setChecked($data['only_with_problems'] == 1)
 			->setUncheckedValue(0)
 			->setId('only_with_problems_#{uniqid}')
-		)
+	)
+
+	->addRow(new CLabel(_('Triggers'), 'filter_triggerids__ms')),
+		(new CMultiSelect([
+			'name' => 'filter_triggerids[]',
+			'object_name' => 'triggers',
+			'data' => $data['filter']['triggers'],
+			'popup' => [
+				'filter_preselect_fields' => [
+					'hosts' => 'filter_hostids_'
+				],
+				'parameters' => [
+					'srctbl' => 'triggers',
+					'srcfld1' => 'triggerid',
+					'dstfrm' => 'zbx_filter',
+					'dstfld1' => 'filter_triggerids_',
+					'monitored_hosts' => true,
+					'with_monitored_triggers' => true,
+					'noempty' => true
+				]
+			]
+	]))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
+
 	->addRow(_('from'),
 		(new CCheckBox('from'))
 			->setChecked($data['from'] == 1)
 			->setUncheckedValue(0)
 			->setId('from_#{uniqid}')
-		);
+	);
 
 // if (array_key_exists('view_curl', $data)) {
 // 	$view_url = $data['view_curl'];
@@ -278,6 +300,7 @@ if (array_key_exists('render_html', $data)) {
 				}
 			}
 		});
+		
 
 		let only_with_problems_checkbox = $('[name="only_with_problems"]');
 		if (only_with_problems_checkbox.attr('unchecked-value') === data['only_with_problems']) {
