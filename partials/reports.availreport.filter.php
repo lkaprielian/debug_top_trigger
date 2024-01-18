@@ -145,17 +145,17 @@ $filter_column = (new CFormList())
 // 	$test = '#{from}';
 // }
 
-$timeselector_options = [
-	'profileIdx' => 'reports.availreport.filter',
-	'profileIdx2' => 0,
-	'from' => getRequest('from'),
-	'to' => getRequest('to')
-];
+// $timeselector_options = [
+// 	'profileIdx' => 'reports.availreport.filter',
+// 	'profileIdx2' => 0,
+// 	'from' => getRequest('from'),
+// 	'to' => getRequest('to')
+// ];
 
-updateTimeSelectorPeriod($timeselector_options);
-$data['filter'] = [
-	'timeline' => getTimeSelectorPeriod($timeselector_options),
-];
+// updateTimeSelectorPeriod($timeselector_options);
+// $data['filter'] = [
+// 	'timeline' => getTimeSelectorPeriod($timeselector_options),
+// ];
 
 $template = (new CDiv())
 	->addClass(ZBX_STYLE_TABLE)
