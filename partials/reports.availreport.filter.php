@@ -112,7 +112,7 @@ $filter_column = (new CFormList())
 		(new CMultiSelect([
 			'name' => 'filter_triggerids[]',
 			'object_name' => 'triggers',
-			'data' => $data['filter']['triggers'],
+			'data' => array_key_exists('triggers', $data) ? $data['triggers'] : [],
 			'popup' => [
 				'filter_preselect_fields' => [
 					'hosts' => 'filter_hostids_'
