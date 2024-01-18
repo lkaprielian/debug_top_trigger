@@ -240,17 +240,6 @@ abstract class CControllerBGAvailReport extends CController {
 			unset($trigger);
 		}
 
-		$timeselector_options = [
-			'profileIdx' => 'reports.availreport.filter',
-			'profileIdx2' => 0,
-			'from' => 'now-7d',
-			'to' => getRequest('to')
-		];
-
-		updateTimeSelectorPeriod($timeselector_options);
-		$data['filter'] = [
-			'timeline' => getTimeSelectorPeriod($timeselector_options),
-		];
 		return [
 			'paging' => $paging,
 			'triggers' => $selected_triggers,

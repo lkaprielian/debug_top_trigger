@@ -145,6 +145,17 @@ $filter_column = (new CFormList())
 // 	$test = '#{from}';
 // }
 
+$timeselector_options = [
+	'profileIdx' => 'reports.availreport.filter',
+	'profileIdx2' => 0,
+	'from' => 'now-7d',
+	'to' => getRequest('to')
+];
+
+updateTimeSelectorPeriod($timeselector_options);
+$data['filter'] = [
+	'timeline' => getTimeSelectorPeriod($timeselector_options),
+];
 
 $template = (new CDiv())
 	->addClass(ZBX_STYLE_TABLE)
