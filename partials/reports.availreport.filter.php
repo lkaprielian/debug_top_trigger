@@ -156,16 +156,14 @@ $filter_column = (new CFormList())
 // $data['filter'] = [
 // 	'timeline' => getTimeSelectorPeriod($timeselector_options),
 // ];
-$timeselector_options = [
-	'profileIdx' => 'reports.availreport.filter',
-	'profileIdx2' => 0,
-	'from' => getRequest('from'),
-	'to' => getRequest('to')
-];
-updateTimeSelectorPeriod($timeselector_options);
-// $data['filter'] = [
-// 	'timeline' => getTimeSelectorPeriod($timeselector_options),
+// $timeselector_options = [
+// 	'profileIdx' => 'reports.availreport.filter',
+// 	'profileIdx2' => 0,
+// 	'from' => getRequest('from'),
+// 	'to' => getRequest('to')
 // ];
+// updateTimeSelectorPeriod($timeselector_options);
+
 
 $data += $timeselector_options;
 $template = (new CDiv())
@@ -182,7 +180,7 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', $data['from']))->removeId(), // get from filter_tabs in view
+		(new CVar('from', '#{from}'))->removeId(), // get from filter_tabs in view
 		(new CVar('to', '#{to}'))->removeId()
 	]);
 
