@@ -303,7 +303,17 @@ abstract class CControllerBGAvailReport extends CController {
 			]);
 			$data['hosts_multiselect'] = CArrayHelper::renameObjectsKeys(array_values($hosts), ['hostid' => 'id']);
 		}
-
+		
+		if ($filter['from'] != '' && $filter['to'] != '') {
+			$range_time_parser = new CRangeTimeParser();
+			$range_time_parser->parse($filter['from']);
+			$filter['from_ts'] = $range_time_parser->getDateTime(true)->getTimestamp(); // timestamp for sql request
+			$range_time_parser->parse($filter['to']);
+			$filter['to_ts'] = $range_time_parser->getDateTime(false)->getTimestamp(); // timestamp for sql request
+		} else {
+			$filter['from_ts'] = null; //nothing changed
+			$filter['to_ts'] = null;
+		}
 		// if ($filter['from']) {
 		// 	$data['from'] = 'now-7d';
 		// }

@@ -106,6 +106,12 @@ $filter_column = (new CFormList())
 			->setChecked($data['only_with_problems'] == 1)
 			->setUncheckedValue(0)
 			->setId('only_with_problems_#{uniqid}')
+		)
+	->addRow(_('from'),
+		(new CCheckBox('from'))
+			->setChecked($data['from'] == 1)
+			->setUncheckedValue(0)
+			->setId('from_#{uniqid}')
 		);
 
 // if (array_key_exists('view_curl', $data)) {
