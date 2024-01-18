@@ -171,7 +171,7 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', $data['filter']['timeline']['from'])), // get from filter_tabs in view
+		(new CVar('from', $data['filter']['timeline']['from']))->removeId(), // get from filter_tabs in view
 		(new CVar('to', '#{to}'))->removeId()
 	]);
 
