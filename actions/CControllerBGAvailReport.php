@@ -237,6 +237,8 @@ abstract class CControllerBGAvailReport extends CController {
 			unset($trigger);
 		}
 
+		$filter['from'] = 'now-7d';
+
 		return [
 			'paging' => $paging,
 			'triggers' => $selected_triggers,
@@ -304,12 +306,12 @@ abstract class CControllerBGAvailReport extends CController {
 			$data['hosts_multiselect'] = CArrayHelper::renameObjectsKeys(array_values($hosts), ['hostid' => 'id']);
 		}
 		
-		if ($filter['from'] == '') {
-			$range_time_parser = new CRangeTimeParser();
-			$range_time_parser->parse($filter['from']);
-			$filter['from'] = $range_time_parser->getDateTime(true)->getTimestamp(); // timestamp for sql request
-			$data['from'] = $filter['from'];
-		} 
+		// if ($filter['from'] == '') {
+		// 	$range_time_parser = new CRangeTimeParser();
+		// 	$range_time_parser->parse($filter['from']);
+		// 	$filter['from'] = $range_time_parser->getDateTime(true)->getTimestamp(); // timestamp for sql request
+		// 	$data['from'] = $filter['from'];
+		// } 
 		// if ($filter['from']) {
 		// 	$data['from'] = 'now-7d';
 		// }

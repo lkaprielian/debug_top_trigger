@@ -1,7 +1,5 @@
 <?php declare(strict_types = 1);
 
-$filter = static::FILTER_FIELDS_DEFAULT;
-
 $filter_column = (new CFormList())
 	->addRow((new CLabel(_('Template groups'), 'tpl_groupids_#{uniqid}_ms')),
 		(new CMultiSelect([
