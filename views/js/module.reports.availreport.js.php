@@ -18,7 +18,7 @@
 				this.refresh_counters = this.createCountersRefresh(1);
 				this.filter = new CTabFilter($('#reports_availreport_filter')[0], filter_options);
 				this.filter.on(TABFILTER_EVENT_URLSET, (ev) => {
-					let url = new Curl('', false);
+					let url = new Curl('', true);
 
 					url.setArgument('action', 'availreport.view.refresh');
 					this.refresh_url = url.getUrl();
@@ -184,7 +184,7 @@
 			const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
 			for(var key of url.searchParams.keys()) {
 				if (key == 'from' || key == 'to') {
-					url.searchParams.set(key, 'now-7d');
+					url.searchParams.set(key, data[key]);
 				}
 			}
 
