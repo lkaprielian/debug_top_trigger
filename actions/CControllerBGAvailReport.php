@@ -30,6 +30,7 @@ abstract class CControllerBGAvailReport extends CController {
 		'from' => '',
 		'to' => ''
 	];
+	
 
 	protected function getData(array $filter): array {
 		$host_group_ids = sizeof($filter['hostgroupids']) > 0 ? $this->getChildGroups($filter['hostgroupids']) : null;
@@ -75,6 +76,8 @@ abstract class CControllerBGAvailReport extends CController {
 			],
                         'limit' => $limit
                 ]);
+
+
 
 		// Get timestamps from and to
 		if ($filter['from'] != '' && $filter['to'] != '') {
@@ -305,6 +308,18 @@ abstract class CControllerBGAvailReport extends CController {
 			]);
 			$data['hosts_multiselect'] = CArrayHelper::renameObjectsKeys(array_values($hosts), ['hostid' => 'id']);
 		}
+		
+		$timeselector_options = [
+			'profileIdx' => 'reports.availreport.filter',
+			'profileIdx2' => 0,
+			'from' => getRequest('from'),
+			'to' => getRequest('to')
+		];
+
+		updateTimeSelectorPeriod($timeselector_options);
+		$data['filter'] = [
+			'timeline' => getTimeSelectorPeriod($timeselector_options),
+		];
 		
 		// if ($filter['from'] == '') {
 		// 	$range_time_parser = new CRangeTimeParser();
