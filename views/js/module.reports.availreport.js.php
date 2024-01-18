@@ -22,7 +22,7 @@
 
 					url.setArgument('action', 'availreport.view.refresh');
 					this.refresh_url = url.getUrl();
-					this.scheduleRefresh();
+					// this.unscheduleRefresh();
 					this.refresh();
 	
 					// const url = new URL(this.refresh_url, 'http://example.com');
