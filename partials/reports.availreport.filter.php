@@ -108,33 +108,30 @@ $filter_column = (new CFormList())
 			->setId('only_with_problems_#{uniqid}')
 	)
 
-	->addRow((new CLabel(_('Triggers'), 'filter_triggerids__ms')),
-		(new CMultiSelect([
-			'name' => 'filter_triggerids[]',
-			'object_name' => 'triggers',
-			'data' => array_key_exists('triggers', $data) ? $data['triggers'] : [],
-			'popup' => [
-				'filter_preselect_fields' => [
-					'hosts' => 'filter_hostids_'
-				],
-				'parameters' => [
-					'srctbl' => 'triggers',
-					'srcfld1' => 'triggerid',
-					'dstfrm' => 'zbx_filter',
-					'dstfld1' => 'filter_triggerids_',
-					'monitored_hosts' => true,
-					'with_monitored_triggers' => true,
-					'noempty' => true
-				]
-			]
-		]))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
-	)
+	// ->addRow((new CLabel(_('Triggers'), 'filter_triggerids__ms')),
+	// 	(new CMultiSelect([
+	// 		'name' => 'filter_triggerids[]',
+	// 		'object_name' => 'triggers',
+	// 		'data' => array_key_exists('triggers', $data) ? $data['triggers'] : [],
+	// 		'popup' => [
+	// 			'filter_preselect_fields' => [
+	// 				'hosts' => 'filter_hostids_'
+	// 			],
+	// 			'parameters' => [
+	// 				'srctbl' => 'triggers',
+	// 				'srcfld1' => 'triggerid',
+	// 				'dstfrm' => 'zbx_filter',
+	// 				'dstfld1' => 'filter_triggerids_',
+	// 				'monitored_hosts' => true,
+	// 				'with_monitored_triggers' => true,
+	// 				'noempty' => true
+	// 			]
+	// 		]
+	// 	]))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
+	// )
 
 	->addRow(_('from'),
-		(new CCheckBox('from'))
-			->setChecked($data['from'] == 1)
-			->setUncheckedValue(0)
-			->setId('from_#{uniqid}')
+	(new CTextBox('from', $data['filter']['from']))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
 	);
 
 // if (array_key_exists('view_curl', $data)) {
