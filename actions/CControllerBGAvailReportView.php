@@ -62,7 +62,6 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 			if ($index == $profile->selected) {
 				// Initialize multiselect data for filter_scr to allow tabfilter correctly handle unsaved state.
 				$filter_tab['filter_src']['filter_view_data'] = $this->getAdditionalData($filter_tab['filter_src']);
-				$filter_tab['filter_src']['from'] = 'now-7d';
 				// $filter_tab[] = $data['filter']['timeline']['from']
 			}
 
