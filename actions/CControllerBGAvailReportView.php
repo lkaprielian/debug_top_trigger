@@ -33,6 +33,15 @@ class CControllerBGAvailReportView extends CControllerBGAvailReport {
 		];
 		
 		$ret = $this->validateInput($fields) && $this->validateTimeSelectorPeriod();
+		
+		$timeselector_options = [
+			// 'profileIdx' => 'web.toptriggers.filter',
+			// 'profileIdx2' => 0,
+			'from' => getRequest('from'),
+			'to' => getRequest('to')
+		];
+
+		updateTimeSelectorPeriod($timeselector_options);
 
 		if (!$ret) {
 			$this->setResponse(new CControllerResponseFatal());
