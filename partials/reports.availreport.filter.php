@@ -131,7 +131,7 @@ $filter_column = (new CFormList())
 	// )
 
 	->addRow(_('from'),
-	(new CTextBox('from', $data['filter']['from']))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
+	(new CTextBox('from', $data['from']))->setWidth(ZBX_TEXTAREA_FILTER_STANDARD_WIDTH)
 	);
 
 // if (array_key_exists('view_curl', $data)) {
@@ -160,7 +160,7 @@ $template = (new CForm('get'))
 		(new CVar('filter_name', '#{filter_name}'))->removeId(),
 		(new CVar('filter_show_counter', '#{filter_show_counter}'))->removeId(),
 		(new CVar('filter_custom_time', '#{filter_custom_time}'))->removeId(),
-		(new CVar('from', $data['filter']['from'])), // get from filter_tabs in view
+		(new CVar('from', $data['from'])), // get from filter_tabs in view
 		(new CVar('to', '#{to}'))->removeId()
 	]);
 
