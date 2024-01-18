@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	jQuery(function($) {
 		function availreportPage() {
-			let filter_options = <?= json_encode($data['tabfilter_options']) ?>;
+			let filter_options = <?= json_encode($data['filter_options']) ?>;
 			this.refresh_url = '<?= $data['refresh_url'] ?>';
 			this.refresh_interval = <?= $data['refresh_interval'] ?>;
 			this.running = false;

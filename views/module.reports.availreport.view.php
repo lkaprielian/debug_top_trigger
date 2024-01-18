@@ -34,11 +34,11 @@ if ($data['action'] == 'availreport.view') {
 		}
 
 		// // Set javascript options for tab filter initialization in module.reports.availreport.js.php file.
-		$data['tabfilter_options'] = $filter->options;
+		$data['filter_options'] = $filter->options;
 		$widget->addItem($filter);
 	}
 	else {
-		$data['tabfilter_options'] = null;
+		$data['filter_options'] = null;
 	}
 
 	$widget->addItem((new CForm())->setName('availreport_view')->addClass('is-loading'));
