@@ -25,6 +25,7 @@
 					// this.unscheduleRefresh();
 					// this.refresh();
 					const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
+					url.setArgument('action', 'availreport.view.refresh');
 					for(var key of url.searchParams.keys()) {
 						if (key == 'from' || key == 'to') {
 							url.searchParams.set(key, data[key]);
