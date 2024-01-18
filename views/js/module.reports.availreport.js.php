@@ -179,17 +179,17 @@
 		window.availreport_page.start();
 	});
 
-	// jQuery.subscribe('timeselector.rangeupdate', function(e, data) { //nottake the change in live
-	// 	if (window.availreport_page) {
-	// 		const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
-	// 		for(var key of url.searchParams.keys()) {
-	// 			if (key == 'from' || key == 'to') {
-	// 				url.searchParams.set(key, data[key]);
-	// 			}
-	// 		}
+	jQuery.subscribe('timeselector.update', function(e, data) { //nottake the change in live
+		if (window.availreport_page) {
+			const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
+			for(var key of url.searchParams.keys()) {
+				if (key == 'from' || key == 'to') {
+					url.searchParams.set(key, data[key]);
+				}
+			}
 
-	// 		window.availreport_page.refresh_url=url.pathname.slice(1) + '?' + url.searchParams.toString();
-	// 		window.availreport_page.refresh();
-	// 	}
-	// });
+			window.availreport_page.refresh_url=url.pathname.slice(1) + '?' + url.searchParams.toString();
+			window.availreport_page.refresh();
+		}
+	});
 </script>
