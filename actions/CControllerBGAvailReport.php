@@ -312,7 +312,7 @@ abstract class CControllerBGAvailReport extends CController {
 		$timeselector_options = [
 			'profileIdx' => 'reports.availreport.filter',
 			'profileIdx2' => 0,
-			'from' => getRequest('from'),
+			'from' => 'now-7d',
 			'to' => getRequest('to')
 		];
 

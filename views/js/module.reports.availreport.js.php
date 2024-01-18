@@ -179,7 +179,7 @@
 		window.availreport_page.start();
 	});
 
-	jQuery.subscribe('timeselector.update', function(e, data) {
+	jQuery.subscribe('timeselector.rangeupdate', function(e, data) { //nottake the change in live
 		if (window.availreport_page) {
 			const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
 			for(var key of url.searchParams.keys()) {
