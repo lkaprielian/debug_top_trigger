@@ -159,8 +159,8 @@ $filter_column = (new CFormList())
 $timeselector_options = [
 	'profileIdx' => 'reports.availreport.filter',
 	'profileIdx2' => 0,
-	'from' => hasInput('from') ? getInput('from') : null,
-	'to' => hasInput('to') ? getInput('to') : null
+	'from' => getRequest('from'),
+	'to' => getRequest('to')
 ];
 updateTimeSelectorPeriod($timeselector_options);
 // $data['filter'] = [
