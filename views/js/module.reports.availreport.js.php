@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	jQuery(function($) {
 		function availreportPage() {
-			let filter_options = <?= json_encode($data['filter_options']) ?>;
+			let filter_options = <?= json_encode($data['tabfilter_options']) ?>;
 			this.refresh_url = '<?= $data['refresh_url'] ?>';
 			this.refresh_interval = <?= $data['refresh_interval'] ?>;
 			this.running = false;
@@ -17,7 +17,7 @@
 			if (filter_options) {
 				this.refresh_counters = this.createCountersRefresh(1);
 				this.filter = new CTabFilter($('#reports_availreport_filter')[0], filter_options);
-				this.filter.off(TABFILTER_EVENT_URLSET, (ev) => {
+				this.filter.on(TABFILTER_EVENT_URLSET, (ev) => {
 					let url = new Curl('', false);
 
 					url.setArgument('action', 'availreport.view.refresh');
