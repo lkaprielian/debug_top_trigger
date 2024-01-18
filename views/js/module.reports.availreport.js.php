@@ -93,12 +93,12 @@
 				return this.bindDataEvents(this.deferred);
 			},
 			setLoading: function() {
-				this.getCurrentForm().addClass('is-loading is-loading-fadein delayed-15s');
-				// $('div[id=reports_availreport_filter]').addClass('is-loading is-loading-fadein');
+				//this.getCurrentForm().addClass('is-loading is-loading-fadein delayed-15s');
+				$('div[id=reports_availreport_filter]').addClass('is-loading is-loading-fadein');
 			},
 			clearLoading: function() {
-				this.getCurrentForm().removeClass('is-loading is-loading-fadein delayed-15s');
-				// $('div[id=reports_availreport_filter]').removeClass('is-loading is-loading-fadein');
+				//this.getCurrentForm().removeClass('is-loading is-loading-fadein delayed-15s');
+				$('div[id=reports_availreport_filter]').removeClass('is-loading is-loading-fadein');
 			},
 			doRefresh: function(body) {
 				this.getCurrentForm().replaceWith(body);
@@ -179,7 +179,7 @@
 		window.availreport_page.start();
 	});
 
-	jQuery.subscribe('timeselector.rangeupdate', function(e, data) {
+	jQuery.subscribe('timeselector.update', function(e, data) {
 		if (window.availreport_page) {
 			const url = new URL(window.availreport_page.refresh_url, 'http://example.com');
 			for(var key of url.searchParams.keys()) {
